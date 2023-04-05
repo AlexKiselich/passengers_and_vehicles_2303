@@ -17,8 +17,8 @@ attr_reader :name, :age, :driver
     @driver
   end
 
-  def driver
+  def drive
     @driver = true
   end
-  
+
 end
