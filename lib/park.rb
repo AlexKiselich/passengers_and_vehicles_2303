@@ -18,6 +18,12 @@ class Park
     @revenue += vehicle.num_adults * admission_price
   end
 
-  
 
+  def all_attendees
+    names = []
+    @passengers.map do |passenger|
+      names << passenger.name
+    end
+ names.sort.join(", ")
+  end
 end
