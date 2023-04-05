@@ -11,7 +11,7 @@ RSpec.describe Park do
   end
 
   it 'can count vehicles that enter park' do
-    park1 = Park.new("Washington Park", "$20")
+    park1 = Park.new("Washington Park", 20)
 
     vehicle1 = Vehicle.new("2001", "Honda", "Civic")
     vehicle2 = Vehicle.new("2000", "Jeep", "Wrangler")
@@ -23,7 +23,7 @@ RSpec.describe Park do
   end
 
   it 'can list all passengers' do
-    park1 = Park.new("Washington Park", "$20")
+    park1 = Park.new("Washington Park", 20)
 
     vehicle1 = Vehicle.new("2001", "Honda", "Civic")
     vehicle2 = Vehicle.new("2000", "Jeep", "Wrangler")
@@ -42,7 +42,7 @@ RSpec.describe Park do
   end
 
   it 'can calculate revenue' do
-    park1 = Park.new("Washington Park", "$20")
+    park1 = Park.new("Washington Park", 20)
 
     vehicle1 = Vehicle.new("2001", "Honda", "Civic")
     vehicle2 = Vehicle.new("2000", "Jeep", "Wrangler")
@@ -56,6 +56,12 @@ RSpec.describe Park do
 
     park1.add_vehicle(vehicle1)
     park1.add_vehicle(vehicle2)
+
+    park1.charge_vehicle(vehicle1)
+    park1.charge_vehicle(vehicle2)
+
+    expect(park1.revenue).to eq(40)
+  end
 
 
 end
